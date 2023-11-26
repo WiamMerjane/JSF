@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+    <title>Page de Connexion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ff4d4d; /* Red background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            width: 400px; /* Increased width */
+            text-align: center; /* Center the content */
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Increased margin */
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 18px; /* Increased font size */
+            font-weight: bold;
+            margin-bottom: 10px; /* Increased margin */
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px; /* Increased padding */
+            font-size: 16px; /* Increased font size */
+            border: 2px solid #cc0000; /* Red border */
+            border-radius: 5px; /* Slightly rounded corners */
+            box-sizing: border-box;
+        }
+
+        .form-group .login-button {
+            background-color: #cc0000; /* Dark red background */
+            color: #fff;
+            padding: 15px; /* Increased padding */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .form-group .login-button:hover {
+            background-color: #990000; /* Darker red on hover */
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <div class="login-container">
+        <h:form>
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur:</label>
+                <h:inputText id="username" value="#{userBean.user.username}" required="true"/>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe:</label>
+                <h:inputSecret id="password" value="#{userBean.user.password}" required="true"/>
+            </div>
+
+            <div class="form-group">
+               <h:form>
+                   <h:commandButton value="Connexion" styleClass="login-button" action="#{userBean.login}" />
+               </h:form>
+            </div>
+        </h:form>
+    </div>
+</h:body>
+
+</html>
